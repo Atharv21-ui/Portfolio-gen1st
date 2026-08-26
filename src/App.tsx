@@ -151,7 +151,7 @@ function App() {
 
             <h2 style={{ fontSize: '72px', fontWeight: 800, lineHeight: 1.05, color: '#fff', margin: 0, fontFamily: "'Space Grotesk', sans-serif" }}>
               About<br />
-              <span style={{ background: 'linear-gradient(135deg,#FF5E00,#FF003C)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Me.</span>
+              <span className="hero-gradient-text">Me.</span>
             </h2>
 
             <p style={{ fontSize: '18px', lineHeight: 1.9, color: 'rgba(255,255,255,0.55)', margin: 0, maxWidth: '540px' }}>
@@ -165,7 +165,7 @@ function App() {
             <div style={{ display: 'flex', gap: '40px', marginTop: '8px' }}>
               {[{ num: '3+', label: 'Years Coding' }, { num: '16', label: 'Years Old' }, { num: '10+', label: 'Projects Built' }].map(s => (
                 <div key={s.label} style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  <span style={{ fontSize: '40px', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif", background: 'linear-gradient(135deg,#FF5E00,#FF003C)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{s.num}</span>
+                  <span className="hero-gradient-text" style={{ fontSize: '40px', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif" }}>{s.num}</span>
                   <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{s.label}</span>
                 </div>
               ))}

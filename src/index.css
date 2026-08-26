@@ -371,3 +371,11 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   cursor: pointer;
 }
+.hero-gradient-text {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
