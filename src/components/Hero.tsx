@@ -103,7 +103,7 @@ export default function Hero() {
   ];
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden h-[100dvh] bg-white tracking-[-0.02em]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+    <div ref={containerRef} className="relative overflow-hidden h-[100dvh] bg-[#030305] tracking-[-0.02em]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
       
       <canvas ref={canvasRef} className="hidden" />
 
@@ -123,7 +123,7 @@ export default function Hero() {
             </a>
           ))}
           
-          <a href="#about" className="hero-nav-connect">
+          <a href="#contact" className="hero-nav-connect">
             Connect
           </a>
         </div>
@@ -144,12 +144,12 @@ export default function Hero() {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden fixed top-0 left-0 right-0 z-40 pt-16 pb-6 px-5 shadow-lg bg-white">
+          <div className="md:hidden fixed top-0 left-0 right-0 z-40 pt-16 pb-6 px-5 shadow-lg bg-[#0a0a0f] border-b border-white/5">
             <div className="flex flex-col">
               <a 
                 href="#"
                 onClick={() => setIsMenuOpen(false)}
-                className="text-gray-800 py-3 border-b border-gray-100 text-left text-sm font-medium"
+                className="text-white py-3 border-b border-white/10 text-left text-sm font-medium"
               >
                 Home
               </a>
@@ -158,15 +158,15 @@ export default function Hero() {
                   key={link.name} 
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-gray-800 py-3 border-b border-gray-100 text-left text-sm font-medium"
+                  className="text-white/80 py-3 border-b border-white/10 text-left text-sm font-medium hover:text-white"
                 >
                   {link.name}
                 </a>
               ))}
               <a 
-                href="#about"
+                href="#contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-4 bg-gray-900 text-white text-sm font-semibold px-5 py-3 rounded-full hover:bg-gray-800 transition-colors w-full text-center"
+                className="mt-4 bg-white text-black text-sm font-semibold px-5 py-3 rounded-full hover:bg-gray-200 transition-colors w-full text-center"
               >
                 Connect
               </a>
@@ -180,7 +180,7 @@ export default function Hero() {
         <svg className="w-full h-full">
           <defs>
             <pattern ref={gridPatternRef} id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#64748b" strokeWidth="0.6" />
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="0.6" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />

@@ -1,8 +1,14 @@
 .process-section {
   position: relative;
   overflow: hidden;
-  padding: 120px 10vw;
+  padding: 60px 5vw;
   background-color: var(--bg-color);
+}
+
+@media (min-width: 1024px) {
+  .process-section {
+    padding: 120px 10vw;
+  }
 }
 
 .process-bg-glow {
@@ -164,7 +170,7 @@
 }
 
 .process-card {
-  padding: 3rem;
+  padding: 1.5rem;
   border-radius: 32px;
   background: rgba(20, 20, 25, 0.6);
   backdrop-filter: blur(20px);
@@ -173,6 +179,12 @@
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .process-card {
+    padding: 3rem;
+  }
 }
 
 .process-card:hover {

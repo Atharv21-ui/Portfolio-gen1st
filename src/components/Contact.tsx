@@ -7,7 +7,7 @@ const InstagramIcon = ({ size, strokeWidth }: any) => <svg width={size} height={
 const LinkedinIcon = ({ size, strokeWidth }: any) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>;
 
 const SIDE_PROFILE_IMAGE = "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_135737_0da59642-725b-451a-997b-b0283d95a42a.png&w=1280&q=85"; 
-const SERVICES = ['Website', 'Mobile App', 'Web App', 'E-Commerce', 'Visual Identity', '3D & Motion', 'Digital Marketing', 'Growth & Consulting', 'Other'];
+const SERVICES = ['Website', 'Mobile App', 'Web App', 'E-Commerce', 'Visual Identity', '3D & Motion'];
 
 const SocialBtn = ({ icon: Icon, bgClass, textClass }: { icon: any, bgClass: string, textClass: string }) => (
   <button className={`contact-social-btn ${bgClass} ${textClass}`}>
@@ -26,9 +26,35 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    await new Promise(r => setTimeout(r, 1000));
-    setSending(false);
-    setSent(true);
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/atharvjhs2610@gmail.com", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          services: selected.join(', '),
+          _subject: "New Contact Form Submission from Portfolio"
+        })
+      });
+
+      if (response.ok) {
+        setSent(true);
+      } else {
+        console.error("Form submission failed");
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to send message. Please check your connection.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const toggleService = (srv: string) => {
@@ -68,11 +94,11 @@ export default function Contact() {
               
               {sent ? (
                 <div className="contact-success-state">
-                  <div style={{ width: '3rem', height: '3rem', borderRadius: '9999px', backgroundColor: '#f0fdf4', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#16a34a' }}>
+                  <div style={{ width: '3rem', height: '3rem', borderRadius: '9999px', backgroundColor: 'rgba(34, 197, 94, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#4ade80' }}>
                     <Check size={24} strokeWidth={3} />
                   </div>
-                  <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#111827', margin: 0 }}>You're all set!</h3>
-                  <p style={{ fontSize: '0.875rem', color: '#6b7280', margin: 0 }}>Expect a reply within 24 hours.</p>
+                  <h3 style={{ fontSize: '1rem', fontWeight: 600, color: 'white', margin: 0 }}>You're all set!</h3>
+                  <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', margin: 0 }}>Expect a reply within 24 hours.</p>
                 </div>
               ) : (
                 <>
@@ -85,10 +111,10 @@ export default function Contact() {
                       <a href="mailto:atharvjhs2610@gmail.com" className="contact-email-link" style={{ fontSize: '0.8rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>atharvjhs2610@gmail.com</a>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', flexShrink: 0 }}>
-                      <SocialBtn icon={TwitterIcon} bgClass="bg-gray-100" textClass="text-gray-800" />
-                      <SocialBtn icon={Circle} bgClass="bg-pink-100" textClass="text-pink-500" />
-                      <SocialBtn icon={InstagramIcon} bgClass="bg-orange-100" textClass="text-orange-400" />
-                      <SocialBtn icon={LinkedinIcon} bgClass="bg-blue-100" textClass="text-blue-600" />
+                      <SocialBtn icon={TwitterIcon} bgClass="bg-white/5" textClass="text-white" />
+                      <SocialBtn icon={Circle} bgClass="bg-pink-500/10" textClass="text-pink-400" />
+                      <SocialBtn icon={InstagramIcon} bgClass="bg-orange-500/10" textClass="text-orange-400" />
+                      <SocialBtn icon={LinkedinIcon} bgClass="bg-blue-500/10" textClass="text-blue-400" />
                     </div>
                   </div>
 

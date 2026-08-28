@@ -8,51 +8,44 @@ import './index.css';
 
 const projects = [
   {
-    title: "E-Commerce Store",
+    title: "E-Commerce (Fashion Boutique)",
     desc: "A full-featured modern online store experience.",
-    url: "https://ecommercestoredemo-webcreations.netlify.app/",
+    url: "https://akuma-gears-demo.netlify.app/",
     color1: "#FF5E00",
     color2: "#030305"
   },
   {
-    title: "Dental Clinic",
+    title: "Dental",
     desc: "Professional and clean web presence for dental care.",
     url: "https://dentaljhs.netlify.app/",
     color1: "#FF003C",
     color2: "#030305"
   },
   {
-    title: "Interior Designers",
+    title: "Interior Design",
     desc: "Elegant portfolio for modern interior design agencies.",
     url: "https://interiordesignersjhs.netlify.app/",
     color1: "#FF2A00",
     color2: "#030305"
   },
   {
-    title: "Fungro Demo",
-    desc: "Interactive financial tracking and growth platform.",
-    url: "https://fungrodemo.netlify.app/",
+    title: "Onboard Project",
+    desc: "A streamlined client onboarding platform.",
+    url: "https://lewts.netlify.app/",
     color1: "#FF5E00",
     color2: "#030305"
   },
   {
-    title: "Gym Webcreations",
+    title: "Gym",
     desc: "High-energy fitness center landing page.",
     url: "https://gym-demo-webcreations.netlify.app/",
     color1: "#FF003C",
     color2: "#030305"
   },
   {
-    title: "Akuma Gears",
-    desc: "Dark-themed aggressive gaming gear storefront.",
-    url: "https://akuma-gears-demo.netlify.app/",
-    color1: "#FF2A00",
-    color2: "#030305"
-  },
-  {
-    title: "Luxe Bristo",
+    title: "Restaurant",
     desc: "Premium restaurant experience and digital menu.",
-    url: "https://luxebristo-webcreations.netlify.app/#menu",
+    url: "https://luxebristo-webcreations.netlify.app/",
     color1: "#FF5E00",
     color2: "#030305"
   },
@@ -61,6 +54,20 @@ const projects = [
     desc: "Showcase of digital web creations and process.",
     url: "https://portfolio-webcreations.netlify.app/#processare",
     color1: "#FF003C",
+    color2: "#030305"
+  },
+  {
+    title: "TSS Computer",
+    desc: "Professional computer and technology services.",
+    url: "https://tsscomputer.in/",
+    color1: "#FF2A00",
+    color2: "#030305"
+  },
+  {
+    title: "E-Commerce Site",
+    desc: "Modern e-commerce platform and storefront.",
+    url: "https://ecommercestoredemo-webcreations.netlify.app/",
+    color1: "#FF5E00",
     color2: "#030305"
   }
 ];
@@ -140,10 +147,10 @@ function App() {
       <Process />
 
       <section id="about" style={{ background: '#050508', minHeight: '100vh', display: 'flex', alignItems: 'stretch', overflow: 'hidden' }}>
-        <div style={{ width: '100%', display: 'flex', flexDirection: 'row', minHeight: '100vh' }}>
+        <div className="about-section-container">
 
           {/* LEFT: Bio */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 72px', gap: '32px' }}>
+          <div className="about-content-left">
 
             <span style={{ display: 'inline-block', background: 'linear-gradient(135deg,rgba(255,94,0,0.15),rgba(255,0,60,0.15))', border: '1px solid rgba(255,94,0,0.3)', borderRadius: '999px', color: '#ff9c5e', fontSize: '12px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', padding: '6px 20px', width: 'fit-content' }}>
               Portfolio · 2025
@@ -162,7 +169,7 @@ function App() {
             </p>
 
             {/* Stats */}
-            <div style={{ display: 'flex', gap: '40px', marginTop: '8px' }}>
+            <div className="about-stats-container" style={{ display: 'flex', gap: '40px', marginTop: '8px' }}>
               {[{ num: '3+', label: 'Years Coding' }, { num: '16', label: 'Years Old' }, { num: '10+', label: 'Projects Built' }].map(s => (
                 <div key={s.label} style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   <span className="hero-gradient-text" style={{ fontSize: '40px', fontWeight: 800, fontFamily: "'Space Grotesk', sans-serif" }}>{s.num}</span>
@@ -179,7 +186,7 @@ function App() {
             </div>
 
             {/* Info rows */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '28px' }}>
+            <div className="about-info-rows" style={{ display: 'flex', flexDirection: 'column', gap: '16px', borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '28px' }}>
               {[{ label: 'Location', value: 'India' }, { label: 'School', value: 'RLPS' }, { label: 'Available for', value: 'Freelance · Collabs · Internships' }].map(item => (
                 <div key={item.label} style={{ display: 'flex', gap: '20px', alignItems: 'baseline' }}>
                   <span style={{ minWidth: '120px', fontSize: '11px', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.12em', fontWeight: 600 }}>{item.label}</span>
@@ -191,8 +198,8 @@ function App() {
           </div>
 
           {/* RIGHT: Lanyard — sticky full-height column */}
-          <div style={{ width: '540px', flexShrink: 0, position: 'relative', background: '#050508', borderLeft: '1px solid rgba(255,255,255,0.05)', minHeight: '100vh' }}>
-            <div style={{ position: 'sticky', top: 0, height: '100vh', width: '100%', overflow: 'hidden' }}>
+          <div className="about-lanyard-wrapper">
+            <div className="about-lanyard-sticky">
               <Lanyard position={[0, 0, 20]} gravity={[0, -40, 0]} />
             </div>
           </div>
