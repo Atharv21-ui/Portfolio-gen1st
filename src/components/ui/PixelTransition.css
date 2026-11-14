@@ -41,3 +41,11 @@
   display: none;
   position: absolute;
 }
+
+@media (max-width: 768px) {
+  .pixelated-image-card__default {
+    position: relative;
+    height: auto;
+    min-height: 14rem;
+  }
+}

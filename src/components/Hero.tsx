@@ -108,7 +108,7 @@ export default function Hero() {
       <canvas ref={canvasRef} className="hidden" />
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between md:justify-center p-4 sm:p-5">
+      <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between md:justify-center p-4 sm:p-5">
         <div className="hidden md:flex hero-navbar-pill nav-drop" style={{ animationDelay: '0.1s' }}>
           <a href="#" aria-label="Home">
             <svg className="w-[22px] h-[22px] text-white fill-current mx-1" viewBox="0 0 256 256">
