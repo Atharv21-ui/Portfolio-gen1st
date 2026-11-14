@@ -69,6 +69,13 @@ const projects = [
     url: "https://ecommercestoredemo-webcreations.netlify.app/",
     color1: "#FF5E00",
     color2: "#030305"
+  },
+  {
+    title: "7ven Heaven",
+    desc: "Artisan bakery and cafe web experience.",
+    url: "https://rococo-mousse-659228.netlify.app/",
+    color1: "#FF003C",
+    color2: "#030305"
   }
 ];
 
