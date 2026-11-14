@@ -299,14 +299,14 @@ export default function Hero() {
       </div>
 
       {/* Layer 5: Hero Text Block */}
-      <div className="absolute z-50 bottom-12 sm:bottom-16 md:bottom-24 left-5 sm:left-8 md:left-12 max-w-[300px] sm:max-w-md pointer-events-none">
-        <p className="text-[11px] sm:text-xs font-semibold tracking-[0.12em] text-white/90 mb-4 hero-rise" style={{ animationDelay: '0.15s' }}>
+      <div className="absolute z-50 bottom-8 sm:bottom-16 md:bottom-24 left-5 right-5 sm:right-auto sm:left-8 md:left-12 sm:max-w-md pointer-events-none">
+        <p className="text-[11px] sm:text-xs font-semibold tracking-[0.12em] text-white/90 mb-3 sm:mb-4 hero-rise" style={{ animationDelay: '0.15s' }}>
           Gateway to your <span className="italic">augmented self</span>
         </p>
-        <h1 className="text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-[-0.08em] text-white mb-6 hero-rise" style={{ animationDelay: '0.3s' }}>
+        <h1 className="text-3xl sm:text-5xl md:text-6xl leading-[1.05] tracking-[-0.06em] sm:tracking-[-0.08em] text-white mb-4 sm:mb-6 hero-rise" style={{ animationDelay: '0.3s' }}>
           A window<br />of coming<br />enhancements
         </h1>
-        <p className="text-sm sm:text-base text-white/90 leading-relaxed mb-8 hero-rise" style={{ animationDelay: '0.5s' }}>
+        <p className="text-sm sm:text-base text-white/90 leading-relaxed mb-6 sm:mb-8 hero-rise" style={{ animationDelay: '0.5s' }}>
           A future where carbon fiber, titanium, and human instinct align. Not machine. Not human. Something wonderfully poised between.
         </p>
         

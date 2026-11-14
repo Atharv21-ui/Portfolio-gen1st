@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -30,6 +32,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   overflow-x: hidden;
+  max-width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -194,10 +197,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-size: 4rem;
+  font-size: clamp(2.25rem, 6vw, 4rem);
   font-weight: 900;
   margin-bottom: 2rem;
   color: var(--text-main);
+  line-height: 1.1;
 }
 
 .project-card {
@@ -220,25 +224,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+  .project-card {
+    border-radius: 24px;
+  }
   .project-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 }
 
 .project-card h3 {
   font-family: var(--font-heading);
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
   background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  word-break: break-word;
 }
 
 .project-card p {
-  font-size: 1.2rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.2rem);
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 @font-face {
@@ -463,15 +472,20 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 768px) {
+  .about-content-left {
+    padding: 48px 5vw;
+    gap: 20px;
+  }
   .about-content-left h2 {
-    font-size: 48px !important;
+    font-size: 44px !important;
   }
   .about-content-left p {
-    font-size: 16px !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
   }
   .about-stats-container {
     flex-wrap: wrap;
-    gap: 24px !important;
+    gap: 20px !important;
   }
   .about-info-rows {
     gap: 12px !important;
@@ -479,5 +493,11 @@ h1, h2, h3, h4, h5, h6 {
   .about-info-rows > div {
     flex-direction: column;
     gap: 4px !important;
+  }
+  .about-lanyard-wrapper {
+    min-height: 340px;
+  }
+  .about-lanyard-sticky {
+    height: 340px;
   }
 }
